@@ -14,20 +14,24 @@ public class DateProcessingExample {
 
 		while(input.hasNextLine()){
 			String data = input.nextLine();
-			StringTokenizer tokens = new StringTokenizer(data, "/-");
-			
-			if(tokens.countTokens() == 3){
-				int month = Integer.parseInt(tokens.nextToken().trim());
-				int day = Integer.parseInt(tokens.nextToken().trim());
-				int year = Integer.parseInt(tokens.nextToken().trim());
-				
-				System.out.printf("Year: %d Month: %d Day: %d%n", year, month, day);
-			}else{
-				System.out.println("Invalid date format, skipping row");
-			}
+			tokenizeThatLine(data);
 		}
 		
 		input.close();
+	}
+
+	private static void tokenizeThatLine(String data) {
+		StringTokenizer tokens = new StringTokenizer(data, "/-");
+		
+		if(tokens.countTokens() == 3){
+			int month = Integer.parseInt(tokens.nextToken().trim());
+			int day = Integer.parseInt(tokens.nextToken().trim());
+			int year = Integer.parseInt(tokens.nextToken().trim());
+			
+			System.out.printf("Year: %d Month: %d Day: %d%n", year, month, day);
+		}else{
+			System.out.println("Invalid date format, skipping row");
+		}
 	}
 
 }

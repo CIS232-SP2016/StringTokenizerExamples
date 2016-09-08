@@ -5,12 +5,12 @@ import java.util.StringTokenizer;
 public class CustomDelimeterExample {
 
 	public static void main(String[] args) {
-		String data = "peter;james;kevin;paul;";
+		String data = "1-703-242-5024";
 		
-		StringTokenizer nameTokens = new StringTokenizer(data, ";");
+		StringTokenizer phoneTokens = new StringTokenizer(data, "-");
 		
-		while(nameTokens.hasMoreTokens()){
-			System.out.println(nameTokens.nextToken());
+		while(phoneTokens.hasMoreTokens()){
+			System.out.println(phoneTokens.nextToken());
 		}
 
 	}
